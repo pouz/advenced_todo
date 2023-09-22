@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/todo.dart';
+
 class ShowListScreen extends StatefulWidget {
   const ShowListScreen({super.key});
 
@@ -10,6 +12,12 @@ class ShowListScreen extends StatefulWidget {
 class _ShowListScreenState extends State<ShowListScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: Column(
+        children: [
+          Todo(),
+        ],
+      ),
+    );
   }
 }

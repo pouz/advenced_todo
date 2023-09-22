@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:window_size/window_size.dart';
 
+import 'route.dart';
+
 const double windowWidth = 400;
 const double windowHeight = 800;
 
@@ -24,6 +26,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp.router(
+      title: 'ADVENCED_TODO',
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRoute.router,
+    );
   }
 }
