@@ -1,0 +1,40 @@
+import 'package:advenced_todo/models/todo_model.dart';
+import 'package:flutter/material.dart';
+
+class Todo extends StatefulWidget {
+  const Todo({
+    super.key,
+    required this.isChecked,
+    required this.text,
+  });
+
+  final bool isChecked;
+  final String text;
+
+  @override
+  State<Todo> createState() => _TodoState();
+}
+
+class _TodoState extends State<Todo> {
+  @override
+  Widget build(BuildContext context) {
+    bool _isChecked = widget.isChecked;
+
+    return Row(
+      children: [
+        Checkbox(
+          value: true,
+          onChanged: (isChecked) {
+            setState(() {
+              _isChecked = isChecked!;
+            });
+          },
+        ),
+        const Text(
+          'dont forget things.',
+          style: TextStyle(),
+        ),
+      ],
+    );
+  }
+}
