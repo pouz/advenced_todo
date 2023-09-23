@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:window_size/window_size.dart';
 
@@ -11,10 +12,12 @@ const double windowHeight = 800;
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    setWindowTitle('ADVENCED_TODO');
-    setWindowMaxSize(const Size(windowWidth, windowHeight));
-    setWindowMinSize(const Size(windowWidth, windowHeight));
+  if (!kIsWeb) {
+    if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+      setWindowTitle('ADVENCED_TODO');
+      setWindowMaxSize(const Size(windowWidth, windowHeight));
+      setWindowMinSize(const Size(windowWidth, windowHeight));
+    }
   }
 
   runApp(const MyApp());

@@ -1,3 +1,4 @@
+import 'package:advenced_todo/screen/show_list_screen/components/foldable_todos.dart';
 import 'package:flutter/material.dart';
 
 import 'components/todo.dart';
@@ -15,7 +16,17 @@ class _ShowListScreenState extends State<ShowListScreen> {
     return const Scaffold(
       body: Column(
         children: [
-          Todo(),
+          Todo(
+            text: 'DON\'T FORGET THIS THINGS.',
+            isChecked: false,
+          ),
+          Todo(
+            text: 'DON\'T TRY THIS AT HOME.',
+            isChecked: false,
+          ),
+          FoldableTodos(
+            text: 'TRY THIS AT HOME',
+          ),
         ],
       ),
     );
